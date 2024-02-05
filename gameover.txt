@@ -1,0 +1,10 @@
+go south
+go south
+go south
+go south
+go east
+go south
+go south
+go south
+walk
+test

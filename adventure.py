@@ -111,6 +111,7 @@ class Morrison(SirDaniel):
 
 # Note: You may modify the code below as needed; the following starter template are just suggestions
 if __name__ == "__main__":
+    random.seed(111)
     w = World('map.txt', 'locations.txt', 'items.txt')
     p = Player(15)
     menu = ["LOOK", "INVENTORY", "SCORE", "QUIT"]
@@ -118,7 +119,7 @@ if __name__ == "__main__":
     moves = 0
     played = False
     oh = False
-    w.get_item(p, 0)
+    #w.get_item(p, 0)
     # intro() #TODO UNCOMMENT
     while not p.victory:
         if moves == 100:

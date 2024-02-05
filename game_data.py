@@ -155,14 +155,14 @@ class Player:
         fail.
         """
         if fail:
-            return len(places) + (len(self.inventory) * 2) + (100 / move)
+            return round(len(places) + (len(self.inventory) * 2) + (100 / move))
         else:
             score = 0
             for item in self.inventory:
                 score += item.points + 1
             if office_hours:
                 score += 5
-        return score + (len(places) * 5) + 100 / move + 10
+        return round(score + (len(places) * 5) + 100 / move + 10)
 
     def show_inventory(self) -> list:
         """

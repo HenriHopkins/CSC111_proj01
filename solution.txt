@@ -1,0 +1,46 @@
+go east
+menu
+score
+go south
+menu
+score
+go south
+menu
+score
+go south
+menu
+score
+go south
+menu
+score
+go south
+menu
+score
+go east
+menu
+score
+enter
+menu
+score
+search
+y
+menu
+inventory
+T-CARD
+leave
+menu
+score
+leave
+go west
+menu
+score
+go south
+menu
+score
+go south
+menu
+score
+walk
+menu
+score
+test
