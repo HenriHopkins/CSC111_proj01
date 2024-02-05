@@ -24,6 +24,7 @@ import random
 import time
 
 
+# TODO CHECK IF ITEM IS ALREADY IN INVENTORY
 # Note: You may add helper functions, classes, etc. here as needed
 
 def intro() -> None:
@@ -116,7 +117,8 @@ if __name__ == "__main__":
     menu = ["LOOK", "INVENTORY", "SCORE", "QUIT"]
     visited_places = []
     moves = 0
-    intro()
+    played = False
+    # intro() #TODO UNCOMMENT
     while not p.victory:
         if moves == 100:
             print('You check your watch suddenly see that its time to take your exam!')
@@ -142,8 +144,10 @@ if __name__ == "__main__":
         print(location.name)
         if (p.x, p.y) not in visited_places:
             print(location.l_desc)
+            time.sleep(2)
         else:
             print(location.s_desc)
+            time.sleep(1)
         visited_places.append((p.x, p.y))
         print("What to do?")
         print("MENU")
@@ -170,13 +174,13 @@ if __name__ == "__main__":
                 for option in menu:
                     print(option)
                 choice = input("\nChoose action: ")
-        if choice.upper() == 'NORTH':
+        if choice.upper() == 'GO NORTH':
             p.move(0, -1)
-        elif choice.upper() == 'EAST':
+        elif choice.upper() == 'GO EAST':
             p.move(1, 0)
-        elif choice.upper() == 'SOUTH':
+        elif choice.upper() == 'GO SOUTH':
             p.move(0, 1)
-        elif choice.upper() == 'WEST':
+        elif choice.upper() == 'GO WEST':
             p.move(-1, 0)
         elif choice.upper() == 'TEST':
             p.victory = True
@@ -217,35 +221,57 @@ if __name__ == "__main__":
                 print("Traverse another floor if you're kind, and a jacket you shall find")
                 time.sleep(1)
             elif location.num == 15:
-                print('You walk into the big open area, its crowded with students, you head over to the light area')
-                time.sleep(1)
-                print('You see a few people sitting there but suddenely recognize something')
-                time.sleep(1)
-                print('You stare from afar as you look at that pattern, you decide to go a little closer')
-                time.sleep(1)
-                print('You found your lost jacket!!')
-                time.sleep(1)
-                w.get_item(p, 7)
+                if 'Lost Jacket' not in p.show_inventory():
+                    print('You walk into the big open area, its crowded with students, you head over to the light area')
+                    time.sleep(1)
+                    print('You see a few people sitting there but suddenely recognize something')
+                    time.sleep(1)
+                    print('You stare from afar as you look at that pattern, you decide to go a little closer')
+                    time.sleep(1)
+                    print('You found your lost jacket!!')
+                    time.sleep(1)
+                    w.get_item(p, 7)
+                else:
+                    print('You walk into the big open area, its crowded with students, you head over to the light area.')
+                    time.sleep(1)
+                    print('The people sitting at the light area stare at you awkwardly since you bothered them.')
+                    time.sleep(1)
             elif location.num == 21:
-                print('You look around the area where the stack of printer paper is')
-                time.sleep(1)
-                print('There is paper all over the floor and all over the desk, it\'s quite messy')
-                time.sleep(1)
-                print('You see a paper with some writing on it an walk over')
-                time.sleep(1)
-                print('You found your cheat sheet!')
-                time.sleep(1)
-                w.get_item(p, 4)
+                if 'Cheat Sheet' not in p.show_inventory():
+                    print('You look around the area where the stack of printer paper is')
+                    time.sleep(1)
+                    print('There is paper all over the floor and all over the desk, it\'s quite messy')
+                    time.sleep(1)
+                    print('You see a paper with some writing on it an walk over')
+                    time.sleep(1)
+                    print('You found your cheat sheet!')
+                    time.sleep(1)
+                    w.get_item(p, 4)
+                else:
+                    print('You look around the area where the stack of printer paper is')
+                    time.sleep(1)
+                    print('It is such a mess, you better leave before someone makes you clean it up!')
+                    time.sleep(1)
             elif location.num == 25:
-                print('You climb up the stairs to the second floor')
-                time.sleep(1.5)
-                print('You climb up the stairs to the third floor')
-                time.sleep(1.5)
-                print('You walk over to where you were sitting and see something blue on the floor')
-                time.sleep(1)
-                print('You found your TCard!!')
-                time.sleep(1)
-                w.get_item(p, 0)
+                if 'T-CARD' not in p.show_inventory():
+                    print('You climb up the stairs to the second floor')
+                    time.sleep(1.5)
+                    print('You climb up the stairs to the third floor')
+                    time.sleep(1.5)
+                    print('You walk over to where you were sitting and see something blue on the floor')
+                    time.sleep(1)
+                    print('You found your TCard!!')
+                    time.sleep(1)
+                    w.get_item(p, 0)
+                else:
+                    print('You climb up the stairs to the second floor')
+                    time.sleep(1.5)
+                    print('You climb up the stairs to the third floor')
+                    time.sleep(1.5)
+                    print('You walk over to where you were sitting and its empty')
+                    time.sleep(1)
+                    print('What a waste of time!')
+                    time.sleep(1)
             else:
                 pass  # TODO SF
         elif choice.upper() == 'ATTEND':
@@ -263,47 +289,53 @@ if __name__ == "__main__":
             else:
                 pass  # TODO bahen
         elif choice.upper() == 'PLAY':
-            print('WELCOME EVERYBODY TO TODAYS UOFT HISTORY GAME SHOW!!!!')
-            time.sleep(0.5)
-            print('My name is Ramsey and I will be your host for today!')
-            time.sleep(1)
-            name = input('Today we have a very special contest, this person who seems to be looking for something, '
-                         'please tell us your name: ')
-            print(f'Please everybody give a big round of applause tooooooo {name.upper()}!!!!!!')
-            time.sleep(1)
-            print(f'{name}, your first question is: What year was the UofT founded?')
-            q1 = input('Answer: ')
-            if q1 == 1827:
-                print('You got the first question correct!')
+            if not played:
+                print('WELCOME EVERYBODY TO TODAYS UOFT HISTORY GAME SHOW!!!!')
+                time.sleep(0.5)
+                print('My name is Ramsey and I will be your host for today!')
                 time.sleep(1)
-                q1 = True
-            else:
-                print('INCORRECT! The correct answer is "1827"')
-                q1 = False
-            print('Your next question will be what is the oldest building in continous academic use at UofT?')
-            q2 = input('Answer: ')
-            if q2.lower() == 'odette hall' or q2.lower() == 'odette':
-                print('You got the second question correct!')
+                name = input('Today we have a very special contest, this person who seems to be looking for something, '
+                             'please tell us your name: ')
+                print(f'Please everybody give a big round of applause tooooooo {name.upper()}!!!!!!')
                 time.sleep(1)
-                q2 = True
-            else:
-                print('INCORRECT! The correct answer is "Odette Hall"')
-                q2 = False
-            print('And your last question is, who was the first president of UofT?')
-            q3 = input('Answer: ')
-            if q3.lower == 'john strachan' or q3.lower == 'john' or q3.lower == 'strachan':
-                print('You got the second question correct!')
+                print(f'{name}, your first question is: What year was the UofT founded?')
+                q1 = input('Answer: ')
+                if q1 == 1827:
+                    print('You got the first question correct!')
+                    time.sleep(1)
+                    q1 = True
+                else:
+                    print('INCORRECT! The correct answer is "1827"')
+                    q1 = False
+                print('Your next question will be what is the oldest building in continous academic use at UofT?')
+                q2 = input('Answer: ')
+                if q2.lower() == 'odette hall' or q2.lower() == 'odette':
+                    print('You got the second question correct!')
+                    time.sleep(1)
+                    q2 = True
+                else:
+                    print('INCORRECT! The correct answer is "Odette Hall"')
+                    q2 = False
+                print('And your last question is, who was the first president of UofT?')
+                q3 = input('Answer: ')
+                if q3.lower == 'john strachan' or q3.lower == 'john' or q3.lower == 'strachan':
+                    print('You got the second question correct!')
+                    time.sleep(1)
+                else:
+                    print('INCORRECT! The correct answer is "John Strachan"')
+                    q3 = False
+                print(f'EVERYBODY GIVE {name.upper()} A HUGE ROUND OF APPLAUSE!!')
                 time.sleep(1)
+                if q1 and q2 and q3:
+                    print('They got everything correct and won a coupon to our school store worth FIFTY DOLLARS!!!!')
+                    w.get_item(p, 9)
+                    played = True
+                else:
+                    print('They tried their hardest and since they didnt get every question right, they get a hi-five!')
+                    played = True
             else:
-                print('INCORRECT! The correct answer is "John Strachan"')
-                q3 = False
-            print(f'EVERYBODY GIVE {name.upper()} A HUGE ROUND OF APPLAUSE!!')
+                print('You have already played again, it\'d be awkward if you went again!')
             time.sleep(1)
-            if q1 and q2 and q3:
-                print('They got everything correct and won a coupon to our school store worth FIFTY DOLLARS!!!!')
-                w.get_item(p, 9)
-            else:
-                print('They tried their hardest and since they didnt get every question right, they get a hi-five!')
         elif choice.upper() == 'BUY':
             print("You're at the Sidney Smith Second Cup")
             time.sleep(0.5)
@@ -312,9 +344,13 @@ if __name__ == "__main__":
                 item = input('Please enter a valid input: ')
             if item == 1 and p.money >= 10:
                 p.money -= 10
+                print('You paid for your drink, you better grab it!')
+                time.sleep(1)
                 w.get_item(p, 1)
             elif item == 2 and p.money >= 5:
                 p.money -= 5
+                print('You paid for your drink, you better grab it!')
+                time.sleep(1)
                 w.get_item(p, 2)
             elif item == 3:
                 print('You leave without buying anything.')
@@ -322,18 +358,22 @@ if __name__ == "__main__":
                 print('Sorry you don\'t have enough money for that item!')
             time.sleep(1)
         elif choice.upper() == 'RENT':
-            print('You walk up to the attendant and ask them what their prices are')
-            time.sleep(1)
-            print('You can rent a suit if you have $10')
-            time.sleep(0.5)
-            i = input('Rent a suit?\n1. Yes\n2. No\n')
-            while i != 1 or i != 2:
-                print('That is not a valid option!')
-                i = input('Rent a suit?\n' + '1. Yes\n' + '2. No\n')
-            if i == 1 and p.money > 5:
-                w.get_item(p, 3)
-            elif i == 1:
-                print('You do not have enough money')
+            if 'Suit and Tie' not in p.show_inventory():
+                print('You walk up to the attendant and ask them what their prices are')
+                time.sleep(1)
+                print('You can rent a suit if you have $10')
+                time.sleep(0.5)
+                i = input('Rent a suit?\n1. Yes\n2. No\n')
+                while i != 1 or i != 2:
+                    print('That is not a valid option!')
+                    i = input('Rent a suit?\n' + '1. Yes\n' + '2. No\n')
+                if i == 1 and p.money > 5:
+                    w.get_item(p, 3)
+                elif i == 1:
+                    print('You do not have enough money')
+            else:
+                print('You already rented a suit and don\t need another, better leave!')
+                time.sleep(1)
         elif choice.upper() == 'CHALLENGE':
             if location.num == 8:
                 pass  # TODO sir dans
@@ -353,7 +393,7 @@ if __name__ == "__main__":
             print('Thank you for playing!')
             exit()
         if location.side != w.get_location(p.x, p.y).side:
-            if random.randint(0, 10) >= 3:
+            if random.randint(0, 15) >= 3:
                 g_light_phrases = ['It\'s a green light! You have to wait for the light to turn red.',
                                    'ZOOOM! A car just drove by, better wait until the cross walk is safe!',
                                    'Aw, just in time to miss the red light, now you have to wait to cross!']
@@ -369,10 +409,10 @@ if __name__ == "__main__":
                 time.sleep(1)
             else:
                 print('Its a red light! You can cross the street with no worries!')
-                time.sleep(1)
+                time.sleep(2)
         elif w.get_location(p.x, p.y).num not in range(15, 27):
             actions = ['REST', 'CONTINUE']
-            if random.randint(1, 20) >= 1:
+            if random.randint(1, 25) == 1:
                 rest_num = 0
                 while rest_num != 3:
                     print(
@@ -402,14 +442,19 @@ if __name__ == "__main__":
                         time.sleep(1)
                         rest_num += 1
                 if rest_num == 3:
-                    print('You\'re sitting on the bench, enjoying the sounds of cars and students talking')
-                    time.sleep(1)
-                    print('Suddenly you see Josh, a friend of yours, show up!')
-                    time.sleep(1)
-                    print('Josh asks you how you are and hands you an energy drink, he bought two from a BOGO!')
-                    time.sleep(1)
-                    print('You have obtained an energy drink!')
-                    w.get_item(p, 8)
+                    if 'Energy Drink' in p.show_inventory():
+                        print('You\'re sitting on the bench, enjoying the sounds of cars and students talking')
+                        time.sleep(1)
+                        print('Suddenly you see Josh, a friend of yours, show up!')
+                        time.sleep(1)
+                        print('Josh asks you how you are and hands you an energy drink, he bought two from a BOGO!')
+                        time.sleep(1)
+                        print('You have obtained an energy drink!')
+                        time.sleep(1)
+                        w.get_item(p, 8)
+                    else:
+                        print('You can\'t rest forever! Time to go!!!!')
+                        time.sleep(1)
         moves += 1
     print('Congratulations for making it to your test on time!')
     time.sleep(1)

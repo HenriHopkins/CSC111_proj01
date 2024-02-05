@@ -18,6 +18,7 @@ please consult our Course Syllabus.
 
 This file is Copyright (c) 2024 CSC111 Teaching Team
 """
+import time
 from typing import Optional, TextIO
 
 
@@ -159,6 +160,18 @@ class Player:
             inventory.append(item.name)
         return inventory
 
+    def drop_item(self, item: Item) -> None:
+        """
+        Removes an item from the inventory, but it is probably not a good idea to do this.
+        """
+        choice = input('Are you sure you want to drop this item (Y|N): ')
+        while choice.upper() != 'Y' or choice.upper() != 'N':
+            print('That is not a valid option!')
+            choice = input('Are you sure you want to drop this item (Y|N): ')
+        if choice == 'Y':
+            self.inventory.remove(item)
+            print(f'Dropped {item.name}!')
+
     def print_inventory(self) -> str:
         """
         Prints out the names and descriptions of items in a player's inventory
@@ -166,9 +179,26 @@ class Player:
         if len(self.inventory) == 0:
             print('You currently have no items in your inventory, they will be added here once you find them!')
         else:
-            print('These are the items currently in your inventory:')
-            for item in self.inventory:
-                print(f'{item.name} - {item.usage}')
+            while True:
+                print('These are the items currently in your inventory:')
+                for item in self.inventory:
+                    print(f'{item.name} ')
+                choice = input('Inspect an item or LEAVE: ')
+                while choice.upper() != 'LEAVE' and choice.upper() not in [x.upper() for x in self.show_inventory()]:
+                    print('That is not a valid option!')
+                    print('These are the items currently in your inventory:')
+                    for item in self.inventory:
+                        print(f'{item.name} ')
+                    choice = input('Inspect an item or LEAVE: ')
+                if choice.upper() in [x.upper() for x in self.show_inventory()]:
+                    for item in self.inventory:
+                        if item.name.upper() == choice.upper():
+                            print(item.usage)
+                            time.sleep(1)
+                else:
+                    break
+
+
 
 
 class World:
@@ -237,14 +267,14 @@ class World:
             while a != 'STOP':
                 curr = [int(a), file.readline().strip(), file.readline().strip()]
                 cmds = []
-                for word in file.readline().split():
+                for word in file.readline().strip().split(','):
                     cmds.append(word)
                 curr.append(cmds)
                 curr.append((file.readline().strip() == 'True'))
                 long = ''
                 b = file.readline().strip()
                 while b != 'END':
-                    long += b + ' '
+                    long += b + '\n'
                     b = file.readline().strip()
                 curr.append(long)
                 location_list.append(curr)
@@ -288,5 +318,16 @@ class World:
         items = self.item
         for i in range(len(items)):
             if items[i][0] == num:
-                play.inventory.append(Item(items[i][1], items[i][2], items[i][3]))
+                choice = input(f'Do you wish to pick up {items[i][1]} (Y|N):')
+                while choice.upper() != 'Y' and choice.upper() != 'N':
+                    print('Sorry that is not a valid option!')
+                    time.sleep(1)
+                    choice = input(f'Do you wish to pick up {items[i][1]} (Y|N):')
+                if choice.upper() == 'Y':
+                    play.inventory.append(Item(items[i][1], items[i][2], items[i][3]))
+                    print(f'You have obtained {items[i][1]}!')
+                    time.sleep(1)
+                else:
+                    print('You can always return to get this item!')
+                    time.sleep(1)
         return None
