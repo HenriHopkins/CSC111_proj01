@@ -273,7 +273,15 @@ if __name__ == "__main__":
                     print('What a waste of time!')
                     time.sleep(1)
             else:
-                pass  # TODO SF
+                                if 'Lucky Pen' not in p.show_inventory():
+                    print('You find a whiteboard, with a sentence mysteriously written on it: ')
+                    time.sleep(0.5)
+                    print('If it is a pen you wish to have, then you may find such in a lab')
+                else:
+                    print("You search the area but only find stacks of papers")
+                    time.sleep(0.5)
+                    print("You get the sense you won't find anything here, your instincts tell you to leave")
+                    
         elif choice.upper() == 'ATTEND':
             if location.num == 23:
                 if 'Suit and Tie' in p.show_inventory():
