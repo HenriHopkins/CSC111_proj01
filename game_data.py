@@ -27,7 +27,7 @@ class Location:
 
     Instance Attributes:
         - num:
-            @TODO
+            A unique integer value assigned to a specific location, -1 if it is inaccessible.
         - name:
             The name of the place, such as the building name, "street", or "sidewalk"
         - s_desc:
@@ -35,8 +35,8 @@ class Location:
             from that location in cardinal directions.
         - l_desc:
             The long description of the place. Includes everything listed in the short description but will be more
-            descriptive in what the building is and what may be inside the building as well as directions that are a
-            include what buildings may be close to them.
+            descriptive in what the building is and what may be inside the building as well as directions to buildings
+            that may be close to them.
         - cmds:
             A list of all possible commands that you can do at this location with the current items in a players
             selected inventory.
@@ -45,7 +45,7 @@ class Location:
             the right side.
 
     Representation Invariants:
-        - self.num @TODO
+        - -1 <= self.num <= 27
         - self.name != ''
         - s_desc != ''
         - l_desc != ''
