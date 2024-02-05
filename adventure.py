@@ -19,9 +19,9 @@ This file is Copyright (c) 2024 CSC111 Teaching Team
 """
 
 # Note: You may add in other import statements here as needed
-from game_data import World, Item, Location, Player
 import random
 import time
+from game_data import World, Item, Location, Player
 
 
 # Note: You may add helper functions, classes, etc. here as needed
@@ -118,6 +118,7 @@ if __name__ == "__main__":
     moves = 0
     played = False
     oh = False
+    w.get_item(p, 0)
     # intro() #TODO UNCOMMENT
     while not p.victory:
         if moves == 100:
@@ -356,7 +357,7 @@ if __name__ == "__main__":
                     q2 = False
                 print('And your last question is, who was the first president of UofT?')
                 q3 = input('Answer: ')
-                if q3.lower == 'john strachan' or q3.lower == 'john' or q3.lower == 'strachan':
+                if q3.lower in 'john strachan':
                     print('You got the second question correct!')
                     time.sleep(1)
                 else:
@@ -378,7 +379,7 @@ if __name__ == "__main__":
             print("You're at the Sidney Smith Second Cup")
             time.sleep(0.5)
             item = input('1. Caramel Frappachino $10\n2. Decaffeinated Coffee $5\n3. Leave')
-            while item != 1 or 2 or 3:
+            while item != 1 or item != 2 or item != 3:
                 item = input('Please enter a valid input: ')
             if item == 1 and p.money >= 10:
                 p.money -= 10

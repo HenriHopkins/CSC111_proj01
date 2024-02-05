@@ -51,15 +51,21 @@ class Location:
         - l_desc != ''
         - cmds != []
     """
+    num: int
+    name: str
+    s_desc: str
+    l_desc: str
+    cmds: list
+    side: bool
 
-    def __init__(self, num: int, name: str, s_desc: str, l_desc: str, cmds: list, side: bool) -> None:
+    def __init__(self, num_name_s_desc: list[int, str], l_desc: str, cmds: list, side: bool) -> None:
         """Initialize a new location.
 
         Since the player hasn't entered the building by default, we will set visited to False.
         """
-        self.num = num
-        self.name = name
-        self.s_desc = s_desc
+        self.num = num_name_s_desc[0]
+        self.name = num_name_s_desc[1]
+        self.s_desc = num_name_s_desc[2]
         self.l_desc = l_desc
         self.cmds = cmds
         self.side = side
@@ -119,6 +125,11 @@ class Player:
         - 0 <= self.x <= 7
         - 0 <= self.y <= 16
     """
+    x: int
+    y: int
+    inventory: list[Item]
+    victory: bool
+    money: int
 
     def __init__(self, money: int) -> None:
         """
@@ -178,9 +189,20 @@ class Player:
         """
         Prints out the names and descriptions of items in a player's inventory
         """
-        if len(self.inventory) == 0:
-            print('You currently have no items in your inventory, they will be added here once you find them!')
-        else:
+
+        def helper_item_finder(a: Item, b: str) -> None:
+            """
+            Helper function to simplify code, also to help check if an item name matches the user's choice
+            """
+            if a.name.upper() == b.upper():
+                print(a.usage)
+                time.sleep(1)
+
+        def helper() -> None:
+            """
+            Helps simplify the print_inventory function so that it is able to print out all the descriptions the user
+            wants it to.
+            """
             while True:
                 print('These are the items currently in your inventory:')
                 for item in self.inventory:
@@ -194,13 +216,14 @@ class Player:
                     choice = input('Inspect an item or LEAVE: ')
                 if choice.upper() in [x.upper() for x in self.show_inventory()]:
                     for item in self.inventory:
-                        if item.name.upper() == choice.upper():
-                            print(item.usage)
-                            time.sleep(1)
+                        helper_item_finder(item, choice)
                 else:
                     break
 
-
+        if len(self.inventory) == 0:
+            print('You currently have no items in your inventory, they will be added here once you find them!')
+        else:
+            helper()
 
 
 class World:
@@ -212,6 +235,9 @@ class World:
     Representation Invariants:
         - map != []
     """
+    map: list[list[int]]
+    location: list[int, list[str], bool, str]
+    item: list[str, int]
 
     def __init__(self, map_data: TextIO, location_data: TextIO, items_data: TextIO) -> None:
         """
@@ -308,9 +334,9 @@ class World:
         """
         number = self.map[y][x]
         loc = self.location
-        for i in range(len(loc)):
-            if loc[i][0] == number:
-                return Location(loc[i][0], loc[i][1], loc[i][2], loc[i][5], loc[i][3], loc[i][4])
+        for location in loc:
+            if location[0] == number:
+                return Location([location[0], location[1], location[2]], location[5], location[3], location[4])
         return None
 
     def get_item(self, play: Player, num: int) -> Optional[Item]:
@@ -318,16 +344,16 @@ class World:
         None (Doesn't append anything).
         """
         items = self.item
-        for i in range(len(items)):
-            if items[i][0] == num:
-                choice = input(f'Do you wish to pick up {items[i][1]} (Y|N):')
+        for x in items:
+            if x[0] == num:
+                choice = input(f'Do you wish to pick up {x[1]} (Y|N):')
                 while choice.upper() != 'Y' and choice.upper() != 'N':
                     print('Sorry that is not a valid option!')
                     time.sleep(1)
-                    choice = input(f'Do you wish to pick up {items[i][1]} (Y|N):')
+                    choice = input(f'Do you wish to pick up {x[1]} (Y|N):')
                 if choice.upper() == 'Y':
-                    play.inventory.append(Item(items[i][1], items[i][2], items[i][3]))
-                    print(f'You have obtained {items[i][1]}!')
+                    play.inventory.append(Item(x[1], x[2], x[3]))
+                    print(f'You have obtained {x[1]}!')
                     time.sleep(1)
                 else:
                     print('You can always return to get this item!')
