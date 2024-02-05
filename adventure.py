@@ -24,7 +24,6 @@ import random
 import time
 
 
-# TODO CHECK IF ITEM IS ALREADY IN INVENTORY
 # Note: You may add helper functions, classes, etc. here as needed
 
 def intro() -> None:
@@ -233,7 +232,9 @@ if __name__ == "__main__":
                     time.sleep(1)
                     w.get_item(p, 7)
                 else:
-                    print('You walk into the big open area, its crowded with students, you head over to the light area.')
+                    print('You walk into the big open area and it\'s crowded with students.')
+                    time.sleep(1)
+                    print('You head over to the light area where you found your jacket.')
                     time.sleep(1)
                     print('The people sitting at the light area stare at you awkwardly since you bothered them.')
                     time.sleep(1)
@@ -288,7 +289,7 @@ if __name__ == "__main__":
                     time.sleep(1)
                     print("You get the sense you won't find anything here, your instincts tell you to leave")
                     time.sleep(1)
-                    
+
         elif choice.upper() == 'ATTEND':
             if location.num == 23:
                 if 'Suit and Tie' in p.show_inventory():
@@ -315,7 +316,7 @@ if __name__ == "__main__":
                     time.sleep(1)
                     print('.', end='')
                     time.sleep(1)
-                    print('Your professor finishes his last minute talk about the exam material and the everyone claps.')
+                    print('Your professor finishes his last minute talk about the exam material and everyone claps.')
                     time.sleep(1)
                     print('You believe you gained more knowledge from it and that you\'ll do better on your test.')
                     time.sleep(1)
