@@ -137,7 +137,7 @@ class Player:
         self.x += x
         self.y += y
 
-    def score(self, move: int, fail: bool, places: set) -> int:
+    def score(self, move: int, fail: bool, places: set, office_hours: bool) -> int:
         """
         Returns the current score of the player based on 100/(number of moves), items in inventory affected by a scalar
         depending on if they failed or passed/still playing and the places they have visited also affected by the pass
@@ -149,6 +149,8 @@ class Player:
             score = 0
             for item in self.inventory:
                 score += item.points + 1
+            if office_hours:
+                score += 5
         return score + (len(places) * 5) + 100 / move + 10
 
     def show_inventory(self) -> list:
