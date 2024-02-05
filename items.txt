@@ -1,0 +1,11 @@
+0,T-CARD,Needed for the exam and allows for entry to Robart's Library,10
+1,Caramel Frappachino,Delicious coffee purchased from Sidney Smith Hall,10
+2,Decaf Coffee,Decaffeinated coffee purchased from Sideny Smith Hall,5
+3,Suit and Tie,Rented from Knox College and makes you look dashing,5
+4,Cheat Sheet,Cheat sheet you wrote throughout the week to help you on the test,10
+5,Golden Pen,Golden pen achieved from Rotman and feels silky smooth to write with,15
+6,Lucky Pen,Lucky pen you always write exams with to,10
+7,Lost Jacket,A jacket you lost but will come in handy if the Exam Center is cold,5
+8,Energy Drink,Back up drink just in case the coffee doesn't work,5
+9,Coupon,Coupon for the school store earned at UofT History Game Show,10
+10,House Cup,Reward for beating the University College Puzzle,10

@@ -1,0 +1,258 @@
+27
+LOCATION: SIDEWALK TO THE EXAM CENTER
+You are at the sidewalk leading towards the exam center. You can WALK down to take your exam or RETURN for more items.
+WALK RETURN
+False
+You are now standing at the edge of the sidewalk leading to the exam center, do you think you have gotten all the
+necessary materials? Do you have everything you need to be able to take the exam? Do you believe your hours of studying
+can finally pay off to something nice? If you do you can WALK down the path to the exam center and take your exam or
+wish to RETURN?
+END
+1
+LOCATION: OUTSIDE ROBART'S LIBRARY
+You can enter RB through the front door, but you need to swipe your TCARD to enter, otherwise you can go EAST or SOUTH.
+ENTER EAST SOUTH
+True
+You are standing outside the entrance of Robart's Library. There are a bunch of food trucks with the delicious smell
+filling your nose. You see a bunch of students lined up taking their turn to enter. You can enter through the front
+door, but you need to swipe your TCARD to enter to do anything, otherwise you can go EAST towards the Rotman School of
+Management or SOUTH towards Ramsey Wright Laboratories.
+END
+18
+LOCATION: ROBART'S LIBRARY FIRST FLOOR
+You are now inside the Robart's Library. You can LEAVE or go UP one floor on the escalator if you have your T-CARD.
+LEAVE UP
+True
+You have now entered Robart's Library. You look around at many students studying and working hard on the surrounding
+computers. You can choose to UP the escalator if you have your T-CARD to the second floor to continue exploring the
+library and the locations that you have been or choose to LEAVE and return back outside.
+END
+17
+LOCATION: ROBART'S LIBRARY SECOND FLOOR
+You ride the escalator to the second floor. You can go DOWN one floor or go UP one floor on the escalator.
+UP DOWN
+True
+You ride the escalator to the second floor. You are starting to remember the time you studied in the big open area that
+was advertised for sun therapy on the fourth floor as well as the time you studied in the silent reading room on the
+third floor. You can go UP to the third floor or DOWN to the first floor on the escalator.
+END
+16
+LOCATION: ROBART'S LIBRARY THIRD FLOOR
+You ride the escalator to the third floor. You can go UP or DOWN one floor or SEARCH the silent reading room.
+UP DOWN SEARCH
+True
+You ride the escalator to the third floor. You look on the left at the silent reading room and remember studying there
+one day since you wanted a quiet place. You can choose to SEARCH the silent reading room to check the location you
+studied in before or go UP one floor to the fourth floor where there is the big open area where you studied or back DOWN
+to the second floor.
+END
+15
+LOCATION: ROBART'S LIBRARY FOURTH FLOOR
+You ridde the escalator to the fourth floor. You can go DOWN one floor or SEARCH the big open study area.
+DOWN SEARCH
+True
+You ride the escalator to the fourth floor. You see the many entrances to the big open study area. You remember sitting
+far in the corner to study one day because you wanted to feel a little light while working. You can choose to SEARCH the
+big open study area to check the location you studied in before or go DOWN to the third floor where the silent reading
+room is.
+END
+2
+LOCATION: OUTSIDE ROTMAN SCHOOL OF MANAGEMENT
+You are outside of Rotman, you can attempt to enter through the front door, or you can travel WEST or SOUTH.
+ENTER WEST SOUTH
+False
+You are standing outside the Rotman School of Management, you watch as many students in suits and ties walk in holding
+briefcases. You can attempt to enter, but if you're wearing a hoodie and sweatpants, they might not let you; I believe
+there might be a suit rental place somewhere on campus. Otherwise, you can go WEST towards Robart's Library or SOUTH
+towards the three branches of the University College.
+END
+23
+LOCATION: INSIDE ROTMAN SCHOOL OF MANAGEMENT
+You are now inside Rotman, you can ATTEND the big assembly or LEAVE and go back outside.
+ATTEND LEAVE
+False
+You are now inside Rotman School of Management, you fit right in with all the people in suits, they are all crowded
+around the door to a big assembly about something that looks interesting. You can line up to ATTEND and get a seat in
+this big assembly or LEAVE to go back outside.
+END
+3
+LOCATION: OUTSIDE RAMSEY WRIGHT LABORATORIES
+You are standing outside Ramsey, you see a "UOFT History Game Show" sign, ENTER to try or go NORTH, EAST, or SOUTH?
+ENTER NORTH EAST SOUTH
+True
+You are standing outside of the Ramsey Wright Laboratories, you see that they are hosting the annual "UOFT History Game
+SHOW" where anyone is able to participate and there is being a prize for any winners. You can ENTER and give it a shot
+and try your hardest or head SOUTH to the Sidney Smith Hall, NORTH to Robart's Library, or EAST towards the three
+branches of University College.
+END
+19
+LOCATION: INSIDE RAMSEY WRIGHT LABORATORIES
+You are have entered Ramsey, you see that the current gameshow line is empty and you can PLAY or LEAVE.
+PLAY LEAVE
+True
+You are now inside of Ramsey Wright Laboratories, there is music blasting and and an open seat on the stage facing who
+you think is Ramsey, the host of the "UOFT History Game Show". The current line is empty as most of the people have
+already attempted the near impossible questionaire. You can go and PLAY to see if you can be the first winner or LEAVE
+to go back outside.
+END
+5
+LOCATION: OUTSIDE SIDNEY SMITH HALL
+You are standing outside of the Sidney Smith Hall, you can ENTER for coffee or head NORTH, EAST, or SOUTH.
+ENTER NORTH EAST SOUTH
+True
+You are standing outside of the Sidney Smith Hall, you can smell the aroma of coffee in the air from the Second Cup
+coffee shop, you see many students lined up for coffee and wonder if you should buy yourself a cup. Maybe a cup of
+coffee will make you more energized for your test. You can ENTER and get coffee or head NORTH to the Ramsey Wright
+Laboratories, EAST towards the three branches of the University College, or SOUTH towards the McLennan Physical
+Laboratories.
+END
+20
+LOCATION: INSIDE SIDNEY SMITH HALL
+You are now inside the Sidney Smith Hall, you can go BUY a coffee or LEAVE to go back outside.
+BUY LEAVE
+True
+You have now entered the Sidney Smith Hall, in the front you see Second Cup Cafe where manys students are lined up to
+buy drinks and snacks, from that shop you can buy a caramel frappachino with whipped cream for 15 dollars or 5 dollars
+for a decaf coffee. You can BUY a coffee or LEAVE to go backoutside.
+END
+7
+LOCATION: MCLENNAN PHYSICAL LABORATORIES
+You are outside of McLennan, you got printer paper here last night, you can ENTER or head NORTH , EAST, or SOUTH.
+ENTER NORTH EAST SOUTH
+True
+You are standing outside the McLennan Physical Laboratories, you remember getting printer paper here from a friend you
+were studying and writing down a few functions on it, was that for you cheat sheet that you misplaced? You can ENTER to
+find out or head NORTH towards the Sidney Smith Hall, EAST towards the three branches of University College, or SOUTH
+towards the Bahen Center.
+END
+21
+LOCATION: INSIDE MCLENNAN PHYSICAL LABORATORIES
+You are now inside of McLennan, you see a stack of printer paper, you can SEARCH around for yours or LEAVE.
+SEARCH LEAVE
+True
+You are now inside of McLennan Physical Laboratories, on the right near the entrance you see a stack of printer paper
+that where you secretly took one to write your cheat sheet. Maybe your cheat sheet is somewhere around here maybe under
+a table or a chair? You can SEARCH around to see if you can find it or LEAVE to go back outside.
+END
+9
+LOCATION: OUTSIDE BAHEN CENTER FOR INFORMATION TECHNOLOGY
+You are standing outside Bahen, your professor holds office hours here, do you ENTER or head NORTH or EAST?
+ENTER NORTH EAST
+True
+You are standing outside the Bahen Center, You remember seeing that your computer science professor holds office hours
+in this building, this would give you some last minute study question asking. You do feel confident about your test, but
+maybe a little more studying might boost your grade by a point or two. You can visit them, head NORTH towards
+McLennan Physical Laboratories, or EAST towards Knox College.
+END
+22
+LOCATION: INSIDE BAHEN CENTER FOR INFORMATION TECHNNOLOGY
+You are now inside Bahen, you see that your professor is hosting a last minute test prep, you can ATTEND or LEAVE.
+ATTEND LEAVE
+True
+You are inside of Bahen Center for Information Technology, you see that your professor is hosting a last minute test
+prep, there are a bunch of students huddled around her while she talks. The information seems like it might be helpful
+for your exam. You can ATTEND and listen along to what she says or LEAVE to go back outside.
+END
+10
+LOCATION: OUTSIDE KNOX COLLEGE
+You are outside Knox, a friend told you about a suit rental here, do you ENTER or head NORTH, WEST, or SOUTH.
+ENTER NORTH WEST SOUTH
+False
+You are standing outside the Bahen Center, a friend mentioned to you once that he rented a suit here for an interview
+when he forgot one since he said that weddings were hosted there, what a weird place to have on campus and what could
+you even use a suit for? Do you enter to go check it out or head NORTH to the three branches of the University College,
+WEST toward the Bahen Center, or SOUTH towards the Myhal Center.
+END
+24
+LOCATION: INSIDE KNOX COLLEGE
+You are now inside Knox, there is a big sign saying suit rentals for 10 dollars, do you RENT a suit or LEAVE.
+RENT LEAVE
+False
+You are now inside of Knox College, your friend wasn't lyhing. There is a big sign that says suit rentals and some
+people lined up to rent suits. There's a sign that says you can rent a suit for 10 dollars for the day. You can choose
+to go in and RENT a suit or LEAVE to go back outside.
+END
+11
+LOCATION: OUTSIDE MYHAL CENTER FOR ENGINEERING INNOVATION AND ENTREPRENEURSHIP
+You are outside of Myhal, the building is closed for today for rennovations, do you move NORTH, EAST, or SOUTH.
+NORTH EAST SOUTH
+False
+You are standing outside of Myhal Center, there is a sign saing that the building is closed for today because of
+rennovations, you remember that in the previous semster there had been a ceiling leak and that caused your computer
+science class to be moved to a different classroom. You look through the big windows and see a bunch of workers working
+there. You can go NORTH to Knox College, EAST to Convocation Hall, or SOUTH towards the Stanford Fleming Building.
+END
+12
+LOCATION: OUTSIDE OF CONVOCATION HALL
+You are standing outside Convocation Hall, you attened class here the day before, You can ENTER or go WEST.
+ENTER WEST
+False
+You are standing outside Convocation Hall, you had attended class there the day before, should you go in and check the
+spot you sat the day before? I mean it is a long walk to the third floor, and even if you did forget anyting, someone
+probably already took it. You can ENTER and go to the third floor and check or WEST towards the Myhal Center.
+END
+25
+LOCATION: INSIDE OF COVOCATION HALL
+You are now inside of Convocation Hall, it's a long way to the third floor where you sat. Do you SEARCH or LEAVE.
+SEARCH LEAVE
+False
+You are now inside of Convocation Hall, You sat on the third floor yesterday during class, but it is a long way to the
+top and maybe it really isn't worth to check. You can go up to the third floor to SEARCH or LEAVE to go back outside.
+END
+13
+LOCATION: OUTSIDE OF STANFORD FLEMING BUILDING
+You're outside the Stanford Fleming building, you studied before in the library. You can ENTER or head NORTH or SOUTH.
+ENTER NORTH SOUTH
+False
+You are standing outside the Stanford Fleming building, in that building there is a nice library dedicated to computer
+science and you have previously studied there and worked on projects with your friends. Do you go in and look around or
+head NORTH towards the Myhal Center or WEST towards the Pathway to the Exam Center.
+END
+26
+LOCATION: INSIDE OF STANDFORD FLEMING BUILDING
+You are now inside of the Stanford Fleming building, you can SEARCH around in the library or LEAVE.
+SEARCH LEAVE
+False
+You are now inside of the Stanford Fleming building, you have studied here previously a few days prior but you may have
+left some things behind. You can SEARCH the areas in which you worked to try to find anything you forgot or just
+LEAVE and search somewhere else.
+END
+14
+LOCATION: EXAM CENTER
+n/a
+TEST
+False
+You have finally made it to the exam center with all the materials you were able to get. You have studied hard for this
+test and worked your hardest to recover your lost items. Good luck on your exam! Time to take the TEST!
+END
+8
+LOCATION: OUTSIDE SIR DANIEL WILSON RESIDENCE
+You meet Sir Daniel at the front of his residence, do you accept his CHALLENGE or head NORTH, EAST, or SOUTH.
+CHALLENGE NORTH EAST SOUTH
+False
+You are in front of one of the three University College residences, you are met up with Sir Daniel, he offers you a
+challenge that if you're able to solve it then he will reward you with something special for your test. Do you accept
+his CHALLENGE or head NORTH to Morrison Hall, EAST to Mclennan Physical Laboratories or SOUTH towards
+Knox College?
+END
+6
+LOCATION: OUTSIDE MORRISON HALL
+You meet Morrison at the front of his residence, do you accept his CHALLENGE or head NORTH, SOUTH, or WEST.
+CHALLENGE NORTH SOUTH WEST
+False
+You are in front of one of the three University College residences, you are met up with Morrison, he offers you a
+challenge that if you're able to solve it then he will reward you with something special for your test. Do you accept
+his CHALLENGE or head NORTH to Whitney Hall, SOUTH towards Sir Daniel Wilson Residence, or WEST to the
+Sidney Smith Hall?
+END
+4
+LOCATION: OUTSIDE WHITNEY HALL
+You meet Whitney at the front of the residence, do you accept his CHALLENGE or head NORTH, SOUTH, or WEST.
+CHALLENGE NORTH SOUTH WEST
+False
+You are in front of one of the three University College residences, you are met up with Whitney, he offers you a
+challenge that if you're able to solve it then he will reward you with something special for your test. Do you accept
+his CHALLENGE or head NORTH to Rotman School of Management, SOUTH towards Morrison Hall, or WEST to the
+Ramsey Wright Laboratories?
+END
+STOP
