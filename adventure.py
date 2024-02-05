@@ -274,14 +274,20 @@ if __name__ == "__main__":
                     print('What a waste of time!')
                     time.sleep(1)
             else:
-                                if 'Lucky Pen' not in p.show_inventory():
+                if 'Lucky Pen' not in p.show_inventory():
                     print('You find a whiteboard, with a sentence mysteriously written on it: ')
-                    time.sleep(0.5)
-                    print('If it is a pen you wish to have, then you may find such in a lab')
+                    time.sleep(1)
+                    print('To cheat you need a sheet, MP is where it may be.')
+                    time.sleep(1)
+                    print('You wonder what that means and suddenly something catches your eye!')
+                    time.sleep(1)
+                    print('It your lucky pen!')
+                    w.get_item(p, 6)
                 else:
                     print("You search the area but only find stacks of papers")
-                    time.sleep(0.5)
+                    time.sleep(1)
                     print("You get the sense you won't find anything here, your instincts tell you to leave")
+                    time.sleep(1)
                     
         elif choice.upper() == 'ATTEND':
             if location.num == 23:
