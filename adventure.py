@@ -118,6 +118,7 @@ if __name__ == "__main__":
     visited_places = []
     moves = 0
     played = False
+    oh = False
     # intro() #TODO UNCOMMENT
     while not p.victory:
         if moves == 100:
@@ -128,7 +129,7 @@ if __name__ == "__main__":
             print('You run to the front door and it is is LOCKED! It seems that all that studying was worth nothing!')
             time.sleep(1)
             print('Better luck next time!')
-            print(f'Your score is: {p.score(moves, True, set(visited_places))}, better luck next time')
+            print(f'Your score is: {p.score(moves, True, set(visited_places), oh)}, better luck next time')
             time.sleep(1)
             print('You also failed your exam :(, better luck next time!')
             time.sleep(1)
@@ -295,7 +296,29 @@ if __name__ == "__main__":
                 else:
                     print("The Rotman people are dissapointed that you're not dressed for the part")
             else:
-                pass  # TODO bahen
+                if not oh:
+                    print('You walk into your room for your professor\'s office hour.')
+                    time.sleep(1)
+                    print('There are a bunch of people standing around your professor as they\'re speaking.')
+                    time.sleep(1)
+                    print('you listen along to what he says.')
+                    time.sleep(1)
+                    print('.', end='')
+                    time.sleep(1)
+                    print('.', end='')
+                    time.sleep(1)
+                    print('.', end='')
+                    time.sleep(1)
+                    print('Your professor finishes his last minute talk about the exam material and the everyone claps.')
+                    time.sleep(1)
+                    print('You believe you gained more knowledge from it and that you\'ll do better on your test.')
+                    time.sleep(1)
+                    oh = True
+                else:
+                    print('You walk into the room your professor holds office hours in, it is completely empty.')
+                    time.sleep(1)
+                    print('There\'s nothing to do so you leave.')
+                    time.sleep(1)
         elif choice.upper() == 'PLAY':
             if not played:
                 print('WELCOME EVERYBODY TO TODAYS UOFT HISTORY GAME SHOW!!!!')
@@ -392,7 +415,7 @@ if __name__ == "__main__":
         elif choice.upper() == 'LOOK':
             print(location.l_desc)
         elif choice.upper() == 'SCORE':
-            print(f'Your current score is: {p.score(moves, False, set(visited_places))}')
+            print(f'Your current score is: {p.score(moves, False, set(visited_places), oh)}')
             time.sleep(2)
         elif choice.upper() == 'INVENTORY':
             p.print_inventory()
@@ -470,7 +493,7 @@ if __name__ == "__main__":
     time.sleep(1)
     if 'T-CARD' in p.show_inventory():
         time.sleep(1)
-        score = p.score(moves, False, set(visited_places))
+        score = p.score(moves, False, set(visited_places), oh)
         print(f'You final score is: {score}')
         time.sleep(1)
         if score >= 50:
@@ -484,7 +507,7 @@ if __name__ == "__main__":
     else:
         print('Sorry, you don\'t have your T-CARD, we can\'t let you take the test!')
         time.sleep(1)
-        print(f'Your score is: {p.score(moves, True, set(visited_places))}, better luck next time')
+        print(f'Your score is: {p.score(moves, True, set(visited_places), oh)}, better luck next time')
         time.sleep(1)
         print('You also failed your exam :(, better luck next time!')
         time.sleep(1)
