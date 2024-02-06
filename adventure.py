@@ -311,11 +311,11 @@ if __name__ == "__main__":
                     print('There are a bunch of people standing around your professor as they\'re speaking.')
                     time.sleep(1)
                     print('you listen along to what he says.')
-                    time.sleep(1)
+                    time.sleep(2)
                     print('.', end='')
-                    time.sleep(1)
+                    time.sleep(2)
                     print('.', end='')
-                    time.sleep(1)
+                    time.sleep(2)
                     print('.', end='')
                     time.sleep(1)
                     print('Your professor finishes his last minute talk about the exam material and everyone claps.')
@@ -379,7 +379,7 @@ if __name__ == "__main__":
         elif choice.upper() == 'BUY':
             print("You're at the Sidney Smith Second Cup")
             time.sleep(0.5)
-            item = input('1. Caramel Frappachino $10\n2. Decaffeinated Coffee $5\n3. Leave')
+            item = input('1. Caramel Frappuccino $10\n2. Decaffeinated Coffee $5\n3. Leave')
             while item != 1 or item != 2 or item != 3:
                 item = input('Please enter a valid input: ')
             if item == 1 and p.money >= 10:
