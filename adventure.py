@@ -84,8 +84,8 @@ class SirDaniel:
         if not self.talked_to:
             print('You can ask: \n1. Can Whitney tell the truth better than Morrison?')
             print('\n2. Is this a correct statement: You are the truth-teller or Whitney is the flip-flopper?')
-            print('\n3. If I asked you if the Whitney door leads to my key, would you answer yes?')
-            print('\n4. Would your exact opposite say this door leads to my key')
+            print('\n3. If I asked you if the Whitney door leads to the cup, would you answer yes?')
+            print('\n4. Would your exact opposite say this door leads to the cup')
             inp = input()
             if inp == 1:
                 print('Yes.')
@@ -116,8 +116,8 @@ class Whitney(SirDaniel):
         if not self.talked_to:
             print('You can ask: \n1. Can you tell the truth better than Morrison?')
             print('\n2. Is this a correct statement: You are the truth-teller or Morrison is the flip-flopper?')
-            print('\n3. If I asked you if your door leads to my key, would you answer yes?')
-            print('\n4. Would your exact opposite say this door leads to my key')
+            print('\n3. If I asked you if your door leads to the cup, would you answer yes?')
+            print('\n4. Would your exact opposite say this door leads to the cup')
             inp = input()
             if inp == 1:
                 print('Yes.')
@@ -135,7 +135,6 @@ class Whitney(SirDaniel):
     def chosen(self) -> None:
         """What happens if Whitney's door is chosen"""
         print('Congratulations, you chose the right door!!')
-        print('You shall be rewarded with your key!!')
         # does something have to be done with the completed thing here to ensure it takes you out of the challenge?
 
 
@@ -154,8 +153,8 @@ class Morrison(SirDaniel):
         if not self.talked_to:
             print('You can ask: \n1. Can Whitney tell the truth better than you?')
             print('\n2. Is this a correct statement: You are the truth-teller or Whitney is the flip-flopper?')
-            print('\n3. If I asked you if the Whitney door leads to my key, would you answer yes?')
-            print('\n4. Would your exact opposite say this door leads to my key')
+            print('\n3. If I asked you if the Whitney door leads to the cup, would you answer yes?')
+            print('\n4. Would your exact opposite say this door leads to the cup')
             inp = input()
             if inp == 1:
                 print('No.')
@@ -488,7 +487,7 @@ if __name__ == "__main__":
                 sd.talked_to = False
                 mo.talked_to = False
                 wh.talked_to = False
-            print('One of the three spirits of UC has your key\n but trickery is abound...\n')
+            print('One of the three spirits of UC has the illustrious House Cup\n but trickery is abound...\n')
             print('One spirit always tells the truth, another always lies, and the third can lie or tell the truth\n')
             print("You don't know which spirit is which, but they do")
             print("You can pick between a group of yes/no questions twice, but you can only talk to two distinct spirits")
