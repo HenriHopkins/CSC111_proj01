@@ -189,7 +189,7 @@ if __name__ == "__main__":
     #w.get_item(p, 0)
     # intro() #TODO UNCOMMENT
     while not p.victory:
-        if moves == 100:
+        if moves == 200:
             print('You check your watch suddenly see that its time to take your exam!')
             time.sleep(1)
             print('You hurridly run to the exam center, oh no are you going to be late???')
