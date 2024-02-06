@@ -56,6 +56,8 @@ def intro() -> None:
     time.sleep(2)
     print('Not only are those things, maybe some coffee around campus will help too! What else will you find?')
     time.sleep(3)
+    print('You start off your journey outside of Robart\'s Library.')
+    time.sleep(3)
 
 
 class SirDaniel:
