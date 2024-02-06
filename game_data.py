@@ -124,6 +124,7 @@ class Player:
     Representation Invariants:
         - 0 <= self.x <= 7
         - 0 <= self.y <= 16
+        - money >= 0
     """
     x: int
     y: int
@@ -166,7 +167,8 @@ class Player:
 
     def show_inventory(self) -> list:
         """
-        Returns a list of all items in a player's inventory with their name only
+        Returns a list of all items in a player's inventory with their name only, this is for checking if an item is in
+        the players inventory purposes.
         """
         inventory = []
         for item in self.inventory:
@@ -235,9 +237,13 @@ class World:
 
     Instance Attributes:
         - map: a nested list representation of this world's map
+        - location: a nested list representation of this world's locations
+        - item: a nested list representation of this world's items
 
     Representation Invariants:
         - map != []
+        - location != []
+        - item != []
     """
     map: list[list[int]]
     location: list[int, list[str], bool, str]
