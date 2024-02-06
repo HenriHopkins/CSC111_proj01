@@ -6,7 +6,7 @@ Instructions (READ THIS FIRST!)
 This Python module contains the code for Project 1. Please consult
 the project handout for instructions and details.
 
-Copyright and Usage Information
+Copyright and Usage InfSIRormation
 ===============================
 
 This file is provided solely for the personal and private use of students
@@ -79,6 +79,24 @@ class SirDaniel:
     def speak(self) -> None:
         """Dialogue of Sir Daniel
         """
+        if not self.talked_to:
+            print('You can ask: \n1. Can Whitney tell the truth better than Morrison?')
+            print('\n2. Is this a correct statement: You are the truth-teller or Whitney is the flip-flopper?')
+            print('\n3. If I asked you if the Whitney door leads to my key, would you answer yes?')
+            print('\n4. Would your exact opposite say this door leads to my key')
+            inp = input()
+            if inp == 1:
+                print('Yes.')
+            elif inp == 2:
+                print('No.')
+            elif inp == 3:
+                print('Yes.')
+            elif inp == 4:
+                print('No.')
+            else:
+                print('Invalid input, please try again')
+                self.speak()
+            self.talked_to = True
 
 
 class Whitney(SirDaniel):
@@ -93,6 +111,30 @@ class Whitney(SirDaniel):
     def speak(self) -> None:
         """Dialogue of Whitney
         """
+        if not self.talked_to:
+            print('You can ask: \n1. Can you tell the truth better than Morrison?')
+            print('\n2. Is this a correct statement: You are the truth-teller or Morrison is the flip-flopper?')
+            print('\n3. If I asked you if your door leads to my key, would you answer yes?')
+            print('\n4. Would your exact opposite say this door leads to my key')
+            inp = input()
+            if inp == 1:
+                print('Yes.')
+            elif inp == 2:
+                print('Yes.')
+            elif inp == 3:
+                print('Yes.')
+            elif inp == 4:
+                print('No.')
+            else:
+                print('Invalid input, please try again')
+                self.speak()
+            self.talked_to = True
+
+    def chosen(self) -> None:
+        """What happens if Whitney's door is chosen"""
+        print('Congratulations, you chose the right door!!')
+        print('You shall be rewarded with your key!!')
+        # does something have to be done with the completed thing here to ensure it takes you out of the challenge?
 
 
 class Morrison(SirDaniel):
@@ -107,7 +149,29 @@ class Morrison(SirDaniel):
     def speak(self) -> None:
         """Dialogue of Morrison
         """
+        if not self.talked_to:
+            print('You can ask: \n1. Can Whitney tell the truth better than you?')
+            print('\n2. Is this a correct statement: You are the truth-teller or Whitney is the flip-flopper?')
+            print('\n3. If I asked you if the Whitney door leads to my key, would you answer yes?')
+            print('\n4. Would your exact opposite say this door leads to my key')
+            inp = input()
+            if inp == 1:
+                print('No.')
+            elif inp == 2:
+                print('Yes.')
+            elif inp == 3:
+                print('Yes.')
+            elif inp == 4:
+                print('No.')
+            else:
+                print('Invalid input, please try again')
+                self.speak()
+            self.talked_to = True
 
+    def chosen(self) -> None:
+        """What happens when Morrison's door is chosen"""
+        print('You have chosen the wrong door HAHAHAHAHAHA we have tricked you')
+        # does something have to be done with the completed thing here to ensure it takes you out of the challenge?
 
 # Note: You may modify the code below as needed; the following starter template are just suggestions
 if __name__ == "__main__":
@@ -119,6 +183,9 @@ if __name__ == "__main__":
     moves = 0
     played = False
     oh = False
+    sd = SirDaniel(False, False)
+    wh = Whitney(False, False)
+    mo = Morrison(False, False)
     #w.get_item(p, 0)
     # intro() #TODO UNCOMMENT
     while not p.victory:
@@ -414,13 +481,45 @@ if __name__ == "__main__":
             else:
                 print('You already rented a suit and don\t need another, better leave!')
                 time.sleep(1)
-        elif choice.upper() == 'CHALLENGE':
+        elif choice.upper() == 'CHALLENGE' and not 'House Cup' in p.show_inventory():  # 2nd condition to not repeat
+            if sd.talked_to:  # reset talked_to if attempting again
+                sd.talked_to = False
+                mo.talked_to = False
+                wh.talked_to = False
+            print('One of the three spirits of UC has your key\n but trickery is abound...\n')
+            print('One spirit always tells the truth, another always lies, and the third can lie or tell the truth\n')
+            print("You don't know which spirit is which, but they do")
+            print("You can pick between a group of yes/no questions twice, but you can only talk to two distinct spirits")
+            print("In other words, you can only ask a question to a spirit once, and can only talk to two spirits")
             if location.num == 8:
-                pass  # TODO sir dans
+                # this is the joker
+                if not sd.talked_to:
+                    temp = input("Enter 'yes' to talk to Sir Daniel")
+                    if temp.upper() == 'YES':
+                        sd.speak()
+                else:
+                    print('You have already talked to Sir Daniel')
             elif location.num == 6:
-                pass  # TODO morrison
+                # this is the one that always lies
+                if not mo.talked_to:
+                    temp = input("Enter 'yes' to talk to Morrison")
+                    if temp.upper() == 'YES':
+                        mo.speak()
+                else:
+                    ans = input("Enter 'yes' if you wish to choose my door, otherwise you will leave")
+                    if ans.upper() == 'YES':
+                        mo.chosen()
             else:
-                pass  # TODO whitney
+                # this is the one that always tells the truth
+                if not wh.talked_to:
+                    temp = input("Enter 'yes' to talk to Whitney")
+                    if temp.upper() == 'YES':
+                        wh.speak()
+                else:
+                    ans = input("Enter 'yes' if you wish to choose my door, otherwise you will leave")
+                    if ans.upper() == 'YES':
+                        wh.chosen()
+                        w.get_item(p, 10)
         elif choice.upper() == 'LOOK':
             print(location.l_desc)
         elif choice.upper() == 'SCORE':
