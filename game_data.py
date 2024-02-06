@@ -177,11 +177,11 @@ class Player:
         """
         Removes an item from the inventory, but it is probably not a good idea to do this.
         """
-        choice = input('Are you sure you want to drop this item (Y|N): ')
-        while choice.upper() != 'Y' or choice.upper() != 'N':
+        choice = input('Do you want to drop this item (Y|N): ')
+        while choice.upper() != 'Y' and choice.upper() != 'N':
             print('That is not a valid option!')
             choice = input('Are you sure you want to drop this item (Y|N): ')
-        if choice == 'Y':
+        if choice.upper() == 'Y':
             self.inventory.remove(item)
             print(f'Dropped {item.name}!')
 
@@ -204,6 +204,9 @@ class Player:
             wants it to.
             """
             while True:
+                if len(self.inventory) == 0:
+                    print('You currently have no items in your inventory, they will be added here once you find them!')
+                    break
                 print('These are the items currently in your inventory:')
                 for item in self.inventory:
                     print(f'{item.name} ')
@@ -217,6 +220,7 @@ class Player:
                 if choice.upper() in [x.upper() for x in self.show_inventory()]:
                     for item in self.inventory:
                         helper_item_finder(item, choice)
+                        self.drop_item(item)
                 else:
                     break
 
