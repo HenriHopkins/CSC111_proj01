@@ -5,7 +5,7 @@ WALK,RETURN
 False
 You are now standing at the edge of the sidewalk leading to the exam center, do you think you have gotten all the
 necessary materials? Do you have everything you need to be able to take the exam? Do you believe your hours of studying
-can finally pay off to something nice? If you do you can WALK down the path to the exam center and take your exam or
+can finally pay off for something nice? If you do, you can WALK down the path to the exam center and take your exam or
 wish to RETURN?
 END
 1
@@ -71,9 +71,9 @@ LOCATION: INSIDE ROTMAN SCHOOL OF MANAGEMENT
 You are now inside Rotman, you can ATTEND the big assembly or LEAVE and go back outside.
 ATTEND,LEAVE
 False
-You are now inside Rotman School of Management, you fit right in with all the people in suits, they are all crowded
-around the door to a big assembly about something that looks interesting. You can line up to ATTEND and get a seat in
-this big assembly or LEAVE to go back outside.
+You are now inside Rotman School of Management, do you think you fit right in with all the people in suits, they are all
+crowded around the door to a big assembly about something that looks interesting. You can line up to ATTEND and get a
+seat in this big assembly or LEAVE to go back outside.
 END
 3
 LOCATION: OUTSIDE RAMSEY WRIGHT LABORATORIES
@@ -87,10 +87,10 @@ branches of University College.
 END
 19
 LOCATION: INSIDE RAMSEY WRIGHT LABORATORIES
-You are have entered Ramsey, you see that the current gameshow line is empty and you can PLAY or LEAVE.
+You are have entered Ramsey, you see that the current gameshow line is empty, and you can PLAY or LEAVE.
 PLAY,LEAVE
 True
-You are now inside of Ramsey Wright Laboratories, there is music blasting and and an open seat on the stage facing who
+You are now inside of Ramsey Wright Laboratories, there is music blasting and an open seat on the stage facing who
 you think is Ramsey, the host of the "UOFT History Game Show". The current line is empty as most of the people have
 already attempted the near impossible questionaire. You can go and PLAY to see if you can be the first winner or LEAVE
 to go back outside.
@@ -112,7 +112,7 @@ You are now inside the Sidney Smith Hall, you can go BUY a coffee or LEAVE to go
 BUY,LEAVE
 True
 You have now entered the Sidney Smith Hall, in the front you see Second Cup Cafe where manys students are lined up to
-buy drinks and snacks, from that shop you can buy a caramel frappachino with whipped cream for 15 dollars or 5 dollars
+buy drinks and snacks, from that shop you can buy a caramel frappuchino with whipped cream for 15 dollars or 5 dollars
 for a decaf coffee. You can BUY a coffee or LEAVE to go backoutside.
 END
 7
@@ -193,11 +193,11 @@ probably already took it. You can ENTER and go to the third floor and check or G
 END
 25
 LOCATION: INSIDE OF COVOCATION HALL
-You are now inside of Convocation Hall, it's a long way to the third floor where you sat. Do you SEARCH or LEAVE.
+You are now inside of Convocation Hall, it's a long way to the third floor where you sat. You can SEARCH or LEAVE.
 SEARCH,LEAVE
 False
 You are now inside of Convocation Hall, You sat on the third floor yesterday during class, but it is a long way to the
-top and maybe it really isn't worth to check. You can go up to the third floor to SEARCH or LEAVE to go back outside.
+top, and maybe it really isn't worth to check. You can go up to the third floor to SEARCH or LEAVE to go back outside.
 END
 13
 LOCATION: OUTSIDE OF STANFORD FLEMING BUILDING
@@ -205,21 +205,21 @@ You're outside the Stanford Fleming building, you studied before in the library.
 ENTER,GO NORTH,GO SOUTH
 False
 You are standing outside the Stanford Fleming building, in that building there is a nice library dedicated to computer
-science and you have previously studied there and worked on projects with your friends. Do you go in and look around or
-GO NORTH towards the Myhal Center or GO WEST towards the Pathway to the Exam Center.
+science, and you have previously studied there and worked on projects with your friends. Do you go in and look around or
+GO NORTH towards the Myhal Center or GO SOUTH towards the Pathway to the Exam Center.
 END
 26
 LOCATION: INSIDE OF STANDFORD FLEMING BUILDING
 You are now inside of the Stanford Fleming building, you can SEARCH around in the library or LEAVE.
 SEARCH,LEAVE
 False
-You are now inside of the Stanford Fleming building, you have studied here previously a few days prior but you may have
+You are now inside of the Stanford Fleming building, you have studied here previously a few days prior, but you may have
 left some things behind. You can SEARCH the areas in which you worked to try to find anything you forgot or just LEAVE
 and search somewhere else.
 END
 14
 LOCATION: EXAM CENTER
-n/a
+You have finally made it to the exam center! Time to take the TEST!
 TEST
 False
 You have finally made it to the exam center with all the materials you were able to get. You have studied hard for this
