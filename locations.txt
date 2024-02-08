@@ -232,7 +232,7 @@ CHALLENGE,GO NORTH,GO EAST,GO SOUTH
 False
 You are in front of one of the three University College residences, you are met up with Sir Daniel, he offers you the UC
 challenge that will reward you with something special for your test if you succeed. Do you accept/continue
-the CHALLENGE or GO NORTH to Morrison Hall, GO EAST to Mclennan Physical Laboratories or GO SOUTH towards Knox College?
+the CHALLENGE or GO NORTH to Morrison Hall, GO WEST to Mclennan Physical Laboratories or GO SOUTH towards Knox College?
 END
 6
 LOCATION: OUTSIDE MORRISON HALL

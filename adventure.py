@@ -387,7 +387,7 @@ if __name__ == "__main__":
                     time.sleep(1)
                     print('There are a bunch of people standing around your professor as they\'re speaking.')
                     time.sleep(1)
-                    print('you listen along to what he says.')
+                    print('you listen along to what she says.')
                     time.sleep(2)
                     print('.', end='')
                     time.sleep(2)
@@ -395,7 +395,7 @@ if __name__ == "__main__":
                     time.sleep(2)
                     print('.', end='')
                     time.sleep(1)
-                    print('Your professor finishes his last minute talk about the exam material and everyone claps.')
+                    print('Your professor finishes her last minute talk about the exam material and everyone claps.')
                     time.sleep(1)
                     print('You believe you gained more knowledge from it and that you\'ll do better on your test.')
                     time.sleep(1)
@@ -417,7 +417,7 @@ if __name__ == "__main__":
                 time.sleep(1)
                 print(f'{name}, your first question is: What year was the UofT founded?')
                 q1 = input('Answer: ')
-                if q1 == 1827:
+                if q1 == '1827':
                     print('You got the first question correct!')
                     time.sleep(1)
                     q1 = True
@@ -435,8 +435,8 @@ if __name__ == "__main__":
                     q2 = False
                 print('And your last question is, who was the first president of UofT?')
                 q3 = input('Answer: ')
-                if q3.lower in 'john strachan':
-                    print('You got the second question correct!')
+                if q3.lower() in 'john strachan':
+                    print('You got the last question correct!')
                     time.sleep(1)
                 else:
                     print('INCORRECT! The correct answer is "John Strachan"')
@@ -457,19 +457,19 @@ if __name__ == "__main__":
             print("You're at the Sidney Smith Second Cup")
             time.sleep(0.5)
             item = input('1. Caramel Frappuccino $10\n2. Decaffeinated Coffee $5\n3. Leave')
-            while item != 1 or item != 2 or item != 3:
+            while item != '1' and item != '2' and item != '3':
                 item = input('Please enter a valid input: ')
-            if item == 1 and p.money >= 10:
+            if item == '1' and p.money >= 10:
                 p.money -= 10
                 print('You paid for your drink, you better grab it!')
                 time.sleep(1)
                 w.get_item(p, 1)
-            elif item == 2 and p.money >= 5:
+            elif item == '2' and p.money >= 5:
                 p.money -= 5
                 print('You paid for your drink, you better grab it!')
                 time.sleep(1)
                 w.get_item(p, 2)
-            elif item == 3:
+            elif item == '3':
                 print('You leave without buying anything.')
             else:
                 print('Sorry you don\'t have enough money for that item!')
@@ -481,12 +481,12 @@ if __name__ == "__main__":
                 print('You can rent a suit if you have $10')
                 time.sleep(0.5)
                 i = input('Rent a suit?\n1. Yes\n2. No\n')
-                while i != 1 or i != 2:
+                while i != '1' and i != '2':
                     print('That is not a valid option!')
                     i = input('Rent a suit?\n' + '1. Yes\n' + '2. No\n')
-                if i == 1 and p.money > 5:
+                if i == '1' and p.money > 5:
                     w.get_item(p, 3)
-                elif i == 1:
+                elif i == '1':
                     print('You do not have enough money')
             else:
                 print('You already rented a suit and don\t need another, better leave!')
@@ -590,7 +590,7 @@ if __name__ == "__main__":
                         time.sleep(1)
                         rest_num += 1
                 if rest_num == 3:
-                    if 'Energy Drink' in p.show_inventory():
+                    if 'Energy Drink' not in p.show_inventory():
                         print('You\'re sitting on the bench, enjoying the sounds of cars and students talking')
                         time.sleep(1)
                         print('Suddenly you see Josh, a friend of yours, show up!')
