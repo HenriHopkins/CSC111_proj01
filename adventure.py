@@ -82,23 +82,24 @@ class SirDaniel:
         """Dialogue of Sir Daniel
         """
         if not self.talked_to:
-            print('You can ask: \n1. Can Whitney tell the truth better than Morrison?')
+            print('You can ask Sir Daniel: \n1. Can Whitney tell the truth better than Morrison?')
             print('\n2. Is this a correct statement: You are the truth-teller or Whitney is the flip-flopper?')
             print('\n3. If I asked you if the Whitney door leads to the cup, would you answer yes?')
             print('\n4. Would your exact opposite say this door leads to the cup')
+            print('\nOR you can enter LEAVE to leave')
             inp = input()
-            if inp == 1:
+            if inp == '1' or inp == '3':
                 print('Yes.')
-            elif inp == 2:
+            elif inp == '2' or inp == '4':
                 print('No.')
-            elif inp == 3:
-                print('Yes.')
-            elif inp == 4:
-                print('No.')
+            elif inp.upper() == 'LEAVE':
+                return None
             else:
                 print('Invalid input, please try again')
                 self.speak()
             self.talked_to = True
+        else:
+            print("You have already asked Sir Daniel a question, you cannot ask him another.")
 
 
 class Whitney(SirDaniel):
@@ -114,28 +115,31 @@ class Whitney(SirDaniel):
         """Dialogue of Whitney
         """
         if not self.talked_to:
-            print('You can ask: \n1. Can you tell the truth better than Morrison?')
+            print('You can ask Whitney: \n1. Can you tell the truth better than Morrison?')
             print('\n2. Is this a correct statement: You are the truth-teller or Morrison is the flip-flopper?')
             print('\n3. If I asked you if your door leads to the cup, would you answer yes?')
             print('\n4. Would your exact opposite say this door leads to the cup')
+            print('\nOR you can enter LEAVE to leave')
             inp = input()
-            if inp == 1:
+            if inp == '1' or inp == '2' or inp == '3':
                 print('Yes.')
-            elif inp == 2:
-                print('Yes.')
-            elif inp == 3:
-                print('Yes.')
-            elif inp == 4:
+            elif inp == '4':
                 print('No.')
+            elif inp.upper() == 'LEAVE':
+                return None
             else:
                 print('Invalid input, please try again')
                 self.speak()
             self.talked_to = True
+        else:
+            print('You have already asked Whitney a question, you cannot ask him another')
 
     def chosen(self) -> None:
         """What happens if Whitney's door is chosen"""
         print('Congratulations, you chose the right door!!')
+        print("If you don't pick up the House Cup now, you'll have to complete the challenge again to get it")
         # does something have to be done with the completed thing here to ensure it takes you out of the challenge?
+        self.completed = True
 
 
 class Morrison(SirDaniel):
@@ -151,28 +155,32 @@ class Morrison(SirDaniel):
         """Dialogue of Morrison
         """
         if not self.talked_to:
-            print('You can ask: \n1. Can Whitney tell the truth better than you?')
+            print('You can ask Morrison: \n1. Can Whitney tell the truth better than you?')
             print('\n2. Is this a correct statement: You are the truth-teller or Whitney is the flip-flopper?')
             print('\n3. If I asked you if the Whitney door leads to the cup, would you answer yes?')
             print('\n4. Would your exact opposite say this door leads to the cup')
+            print('\nOR you can enter LEAVE to leave')
             inp = input()
-            if inp == 1:
+            if inp == '1' or inp == '4':
                 print('No.')
-            elif inp == 2:
+            elif inp == '2' or inp == '3':
                 print('Yes.')
-            elif inp == 3:
-                print('Yes.')
-            elif inp == 4:
-                print('No.')
+            elif inp.upper() == 'LEAVE':
+                return None
             else:
                 print('Invalid input, please try again')
                 self.speak()
             self.talked_to = True
+        else:
+            print('You have already asked Morrison a question, you cannot ask him another')
 
     def chosen(self) -> None:
         """What happens when Morrison's door is chosen"""
-        print('You have chosen the wrong door HAHAHAHAHAHA we have tricked you')
+        print('You have chosen the wrong door MUAHAHAHAHAHAHAHAHA')
+        print('We have tricked you... BUT you may try to start the challenge again by talking to one of the UC spirits')
         # does something have to be done with the completed thing here to ensure it takes you out of the challenge?
+        self.completed = True
+
 
 # Note: You may modify the code below as needed; the following starter template are just suggestions
 if __name__ == "__main__":
@@ -187,6 +195,7 @@ if __name__ == "__main__":
     sd = SirDaniel(False, False)
     wh = Whitney(False, False)
     mo = Morrison(False, False)
+    initiated = False  # variable to determine whether the UC puzzle challenge has been initiated
     #w.get_item(p, 0)
     # intro() #TODO UNCOMMENT
     while not p.victory:
@@ -482,45 +491,44 @@ if __name__ == "__main__":
             else:
                 print('You already rented a suit and don\t need another, better leave!')
                 time.sleep(1)
-        elif choice.upper() == 'CHALLENGE' and not 'House Cup' in p.show_inventory():  # 2nd condition to not repeat
-            if sd.talked_to:  # reset talked_to if attempting again
+        elif choice.upper() == 'CHALLENGE' and 'House Cup' not in p.show_inventory():  # 2nd condition to not repeat
+            if mo.completed:  # reset talked_to if attempting again
                 sd.talked_to = False
                 mo.talked_to = False
                 wh.talked_to = False
-            print('One of the three spirits of UC has the illustrious House Cup\n but trickery is abound...\n')
-            print('One spirit always tells the truth, another always lies, and the third can lie or tell the truth\n')
-            print("You don't know which spirit is which, but they do")
-            print("You can pick between a group of yes/no questions twice, but you can only talk to two distinct spirits")
-            print("In other words, you can only ask a question to a spirit once, and can only talk to two spirits")
+                mo.completed = False
+            if not initiated:
+                print('One of the three spirits of UC has the illustrious House Cup\nBut trickery is abound...')
+                time.sleep(1)
+                print('Morrison and Whitney both may have the House Cup, while Sir Daniel does not')
+                print('One spirit always tells the truth, another always lies, and the third can lie or tell the truth')
+                print("You don't know which spirit is which, but they do")
+                time.sleep(1)
+                print("You can pick between a group of questions to ask each spirit...")
+                print("But you can only ask each spirit a question ONCE")
+                print("FYI: Sir Daniel is SOUTH of Morrison who is SOUTH of Whitney")
+                time.sleep(1)
             if location.num == 8:
                 # this is the joker
-                if not sd.talked_to:
-                    temp = input("Enter 'yes' to talk to Sir Daniel")
-                    if temp.upper() == 'YES':
-                        sd.speak()
-                else:
-                    print('You have already talked to Sir Daniel')
+                sd.speak()
+                initiated = True
             elif location.num == 6:
                 # this is the one that always lies
-                if not mo.talked_to:
-                    temp = input("Enter 'yes' to talk to Morrison")
-                    if temp.upper() == 'YES':
-                        mo.speak()
-                else:
-                    ans = input("Enter 'yes' if you wish to choose my door, otherwise you will leave")
-                    if ans.upper() == 'YES':
-                        mo.chosen()
+                mo.speak()
+                initiated = True
+                ans = input("Enter CHOOSE if you think Morrison has the House Cup, otherwise you will leave")
+                if ans.upper() == 'CHOOSE':
+                    mo.chosen()
             else:
                 # this is the one that always tells the truth
-                if not wh.talked_to:
-                    temp = input("Enter 'yes' to talk to Whitney")
-                    if temp.upper() == 'YES':
-                        wh.speak()
-                else:
-                    ans = input("Enter 'yes' if you wish to choose my door, otherwise you will leave")
-                    if ans.upper() == 'YES':
-                        wh.chosen()
-                        w.get_item(p, 10)
+                initiated = True
+                wh.speak()
+                ans = input("Enter 'CHOOSE' if you think Whitney has the House Cup, otherwise you will leave")
+                if ans.upper() == 'CHOOSE':
+                    wh.chosen()
+                    w.get_item(p, 10)
+        elif choice.upper() == 'CHALLENGE':
+            print('You have already obtained the prize for the challenge!!! Find something else to do.')
         elif choice.upper() == 'LOOK':
             print(location.l_desc)
         elif choice.upper() == 'SCORE':
