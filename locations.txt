@@ -64,7 +64,7 @@ False
 You are standing outside the Rotman School of Management, you watch as many students in suits and ties walk in holding
 briefcases. You can attempt to enter, but if you're wearing a hoodie and sweatpants, they might not let you; I believe
 there might be a suit rental place somewhere on campus. Otherwise, you can GO WEST towards Robart's Library or GO SOUTH
-towards the three branches of the University College.
+towards the three branches of the University College (starting with Whitney).
 END
 23
 LOCATION: INSIDE ROTMAN SCHOOL OF MANAGEMENT
@@ -83,7 +83,7 @@ True
 You are standing outside of the Ramsey Wright Laboratories, you see that they are hosting the annual "UOFT History Game
 SHOW" where anyone is able to participate and there is being a prize for any winners. You can ENTER and give it a shot
 and try your hardest or GO SOUTH to the Sidney Smith Hall, GO NORTH to Robart's Library, or GO EAST towards the three
-branches of University College.
+branches of University College (starting with Whitney).
 END
 19
 LOCATION: INSIDE RAMSEY WRIGHT LABORATORIES
@@ -103,8 +103,8 @@ True
 You are standing outside of the Sidney Smith Hall, you can smell the aroma of coffee in the air from the Second Cup
 coffee shop, you see many students lined up for coffee and wonder if you should buy yourself a cup. Maybe a cup of
 coffee will make you more energized for your test. You can ENTER and get coffee or GO NORTH to the Ramsey Wright
-Laboratories, GO EAST towards the three branches of the University College, or GO SOUTH towards the McLennan Physical
-Laboratories.
+Laboratories, GO EAST towards the three branches of the University College (starting with Morrison), or GO SOUTH towards
+the McLennan Physical Laboratories.
 END
 20
 LOCATION: INSIDE SIDNEY SMITH HALL
@@ -122,8 +122,8 @@ ENTER,GO NORTH,GO EAST,GO SOUTH
 True
 You are standing outside the McLennan Physical Laboratories, you remember getting printer paper here from a friend you
 were studying and writing down a few functions on it, was that for you cheat sheet that you misplaced? You can ENTER to
-find out or GO NORTH towards the Sidney Smith Hall, GO EAST towards the three branches of University College, or GO
-SOUTH towards the Bahen Center.
+find out or GO NORTH towards the Sidney Smith Hall, GO EAST towards the three branches of University College
+(starting with Sir Daniel Wilson), or GO SOUTH towards the Bahen Center.
 END
 21
 LOCATION: INSIDE MCLENNAN PHYSICAL LABORATORIES
@@ -158,10 +158,10 @@ LOCATION: OUTSIDE KNOX COLLEGE
 You are outside Knox, a friend told you about a suit rental here, do you ENTER or GO NORTH, GO WEST, or GO SOUTH.
 ENTER,GO NORTH,GO WEST,GO SOUTH
 False
-You are standing outside the Bahen Center, a friend mentioned to you once that he rented a suit here for an interview
+You are standing outside Knox College, a friend mentioned to you once that he rented a suit here for an interview
 when he forgot one since he said that weddings were hosted there, what a weird place to have on campus and what could
-you even use a suit for? You can enter to go check it out or GO NORTH to the three branches of the University College,
-GO WEST toward the Bahen Center, or GO SOUTH towards the Myhal Center.
+you even use a suit for? You can enter to go check it out or GO NORTH to the three branches of the University College
+(starting with Sir Daniel Wilson), GO WEST toward the Bahen Center, or GO SOUTH towards the Myhal Center.
 END
 24
 LOCATION: INSIDE KNOX COLLEGE
@@ -227,31 +227,31 @@ test and worked your hardest to recover your lost items. Good luck on your exam!
 END
 8
 LOCATION: OUTSIDE SIR DANIEL WILSON RESIDENCE
-You meet Sir Daniel at the front of his residence, do you accept his CHALLENGE or GO NORTH, GO EAST, or GO SOUTH.
+You meet Sir Daniel at the front of his residence, enter CHALLENGE to talk to Sir Daniel or GO NORTH, GO EAST, GO SOUTH.
 CHALLENGE,GO NORTH,GO EAST,GO SOUTH
 False
-You are in front of one of the three University College residences, you are met up with Sir Daniel, he offers you a
-challenge that if you're able to solve it then he will reward you with something special for your test. Do you accept
-his CHALLENGE or GO NORTH to Morrison Hall, GO EAST to Mclennan Physical Laboratories or GO SOUTH towards Knox College?
+You are in front of one of the three University College residences, you are met up with Sir Daniel, he offers you the UC
+challenge that will reward you with something special for your test if you succeed. Do you accept/continue
+the CHALLENGE or GO NORTH to Morrison Hall, GO EAST to Mclennan Physical Laboratories or GO SOUTH towards Knox College?
 END
 6
 LOCATION: OUTSIDE MORRISON HALL
-You meet Morrison at the front of his residence, do you accept his CHALLENGE or GO NORTH, GO SOUTH, or GO WEST.
+You meet Morrison at the front of his residence, enter CHALLENGE to talk to Morrison or GO NORTH, GO SOUTH, or GO WEST.
 CHALLENGE,GO NORTH,GO SOUTH,GO WEST
 False
-You are in front of one of the three University College residences, you are met up with Morrison, he offers you a
-challenge that if you're able to solve it then he will reward you with something special for your test. Do you accept
-his CHALLENGE or GO NORTH to Whitney Hall, GO SOUTH towards Sir Daniel Wilson Residence, or GO WEST to the Sidney Smith
+You are in front of one of the three University College residences, you are met up with Morrison, he offers you the UC
+CHALLENGE that will reward you with something special, if you're able to solve it. Do you accept/continue
+the CHALLENGE or GO NORTH to Whitney Hall, GO SOUTH towards Sir Daniel Wilson Residence, or GO WEST to the Sidney Smith
 Hall?
 END
 4
 LOCATION: OUTSIDE WHITNEY HALL
-You meet Whitney at the front of the residence, do you accept his CHALLENGE or GO NORTH, GO SOUTH, or GO WEST.
+You meet Whitney at the front of the residence, enter CHALLENGE to talk to Whitney or GO NORTH, GO SOUTH, or GO WEST.
 CHALLENGE,GO NORTH,GO SOUTH,GO WEST
 False
 You are in front of one of the three University College residences, you are met up with Whitney, he offers you a
-challenge that if you're able to solve it then he will reward you with something special for your test. Do you accept
-his CHALLENGE or GO NORTH to Rotman School of Management, GO SOUTH towards Morrison Hall, or GO WEST to the Ramsey
+challenge that will reward you with something special for your test, if you're able to solve it. Do you accept/continue
+the CHALLENGE or GO NORTH to Rotman School of Management, GO SOUTH towards Morrison Hall, or GO WEST to the Ramsey
 Wright Laboratories?
 END
 STOP
