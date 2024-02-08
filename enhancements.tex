@@ -1,0 +1,131 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+
+\title{CSC111 Winter 2024 Project 1}
+\author{Vincent Wang, Henri Hopkins}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Enhancements}
+
+
+\begin{enumerate}
+
+\item Enhancement \#1: Search Robart's Library
+	\begin{itemize}
+	\item Its a puzzle that first requires a player to obtain their T-CARD from the Convocation Hall. From there, the player has the option to go to the second floor and will find nothing, then to the third floor where they have the option to choose to search the Silent Reading room and find a clue to their lost jacket, then to the fourth floor where they have the option to choose to search the big open study area where they can find their lost jacket. Player can obtain Lost Jacket item from this.
+	\item Complexity level: low
+	\item It's pretty straightforward, its a bonus item you can get if you pay attention to the long description or if you're curious. Since this is where the student starts, if they choose to explore, they will realize you need to find your T-CARD to enter. Then once they obtain the T-CARD (which is a mandatory to pass their exam) they can come back and get a bonus item.
+	\end{itemize}
+
+\item Enhancement \#2: Ramsey Game Show
+	\begin{itemize}
+	\item This is a gameshow style event that  happens whenever a player enters the Ramsey Wright Laboratories and chooses to participate. To start the even it is pretty simple and the player is asked three questions about the history of UofT. If the player gets all three answers correct they get a coupon, which is a bonus item, that scores them more points at the end. Players can obtain a Coupon item from this.
+	\item Complexity level: medium
+	\item To start the event, its pretty easy since they're no prerequisites. However, what I think makes it deserve medium is that they need to know knowledge about the history of UofT or spend time googling the answer. Still, it isn't too complex.
+	\end{itemize}
+
+\item Enhancement \#3: Sidney Smith Coffee and Knox Suit Rental
+	\begin{itemize}
+	\item This is a task the player has to choose what they want. The player starts off with 15 dollars at the beginning and is given the option to purchase a caramel frappuccino for 10 dollars and/or a decaffeinated coffee for 5 dollars at the Sidney Smith Hall and/or a 10 dollar suit rental from Knox College. A player can choose between the 2 coffees or the decaf coffee and the suit. The suit is special in this case because it is a prerequisite for the Rotman event. All of these items give points and it depends on how the player plays it out, you can't get all three, you can only get two. You can either get a Decaffeinated Coffee and Caramel Frappuchino items or a Decaffeinated Coffee and a Suit and Tie items.
+	\item Complexity level: high
+	\item It depends mostly on the player, but when adding this feature we wanted it to be like a "I wonder why we can buy both coffees" if they visit Sidney Smith before they visit Knox. Also, we want the players to think about connecting Rotman to the Knox suit rental by having some clues in the long description for Rotman.
+    \end{itemize}
+    
+\item Enhancement \#4: McLennan Physical Laboratories Search
+	\begin{itemize}
+	\item A task that the player has to do to search for their notes. If the player decides to search elsewhere first, they can find in Stanford Fleming that their cheat sheet might be here. If they search MP before, they can be able to find their cheat sheet. Completing this search gives the player a Cheat Sheet item.
+	\item Complexity level: low
+	\item The process is very easy, their aren't any hard tasks when finding it, it is just that the player is more likely to stumble upon the cheat sheet rather than the clue, I added that so the player can either figure out that they are very smart and found it without the clue or to trick the player into checking there once again.
+	\end{itemize}
+
+\item Enhancement \#5: Bahen Office Hours
+	\begin{itemize}
+	\item A task a player can participate in to earn extra points on their "exam". If the player chooses to participate in that event, they get 5 extra points added to their final score. Its a petty straightforward event that the player has to sit through and not do anything.
+	\item Complexity level: low
+	\item I wouldn't say for it to be very hard, there are no prerequisites and all a player has to do is sit patiently through some text and then they get points added on. This was added mainly to make the final score look better if the player wanted to complete every task possible.
+	\end{itemize}
+
+\item Enhancement \#6: Rotman Suit Event
+	\begin{itemize}
+	\item A player is able to attend a special event at Rotman School of Management if they have a suit and tie item in their inventory. This event is only caused if the player doesn't spend all their money at Sidney Smith and rather rents a suit at Knox College. Renting a suit gives the player a Golden Pen item.
+	\item Complexity level: medium
+	\item The complex part of this is seeing the correlation of the suit rental in Knox and Rotman. Since without one or the other, a player may be confused why there may be a feature about it and then wonder what to do. If both are visited and the player remembers, then they are more lenient to rent a suit and not purchase both coffees from Sidney Smith.
+	\end{itemize}
+
+\item Enhancement \#7: University College Challenge
+	\begin{itemize}
+	\item This challenge is loosely based off the 3 guards 2 doors riddle. If unsure you can probably find it on google.  This requires the player to talk to one of the UC spirits: Morrison, Sir Daniel, or Whitney. After asking the spirits 1 question each, chosen from a group of questions, the player must determine who has the House Cup. Completing this challenge awards the player with the UC House Cup item. Inheritance is used to create the data types and features of each spirit.
+	\item Complexity level: high
+	\item This is mostly complex because of the amount of travel and the amount of people you have to talk to. You have to make optimal use of your 1 question per spirit too. The riddle is hard and requires some thinking but in the end it is a 50/50 chance to get the riddle correct.
+	\end{itemize}
+
+\item Enhancement \#8: Myhal Center Mimic
+	\begin{itemize}
+	\item This is a place where you can't do anything but leave the area, in the description it says that it is under construction for renovations and there is nothing  you can do but continue.
+	\item Complexity level: medium
+	\item I added this location to be something like a mimic where the player thinks its something good but instead of being a fake chest of loot its a fake chest. There is nothing that is able to be received here and is more of something to waste a players time.
+	\end{itemize}
+
+ \item Enhancement \#9: Con Hall
+	\begin{itemize}
+	\item A player is able to enter Convocation Hall and walk up to the third floor where they are able to find their T-CARD. A T-CARD item can be received from completing this.
+	\item Complexity level: low
+	\item Very straightforward, you go in, search and be patient as it makes the player wait for the text to end. Then they can choose to pick up their T-CARD and then the puzzle is done. The T-CARD is a required item to pass the players exam though.
+    \end{itemize}
+
+ \item Enhancement \#10: Stanford Fleming Notes
+	\begin{itemize}
+	\item If a student searches Stanford Fleming they get a clue that their cheat sheet is in the McLennan Physical Laboratories as well as a Lucky Pen item. 
+	\item Complexity level: low
+	\item This puzzle is also very straightforward and connected with the McLennan Physical Laboratories Search. Players have to go in, choose to search for their item and then figure out the rest. It is pretty simple.
+	\end{itemize}
+
+ \item Enhancement \#11: Cross Road Event
+	\begin{itemize}
+	\item If a player moves from the left side of the map (Meaning moving east/west) to the right side there is a chance for the light to be green meaning that they have to wait for it to turn red so they can cross the road.
+	\item Complexity level: low
+	\item This is a waiting event and the player has to simply either get lucky so they don't have to wait or wait out the red light so that they can cross the road to the other side.
+	\end{itemize}
+
+ \item Enhancement \#12: Sidewalk Event
+	\begin{itemize}
+	\item This event happens randomly whenever the student doesn't cross from one side of the map to another (Meaning moving north/south). What happens is that they have the option to rest or continue. If a player rests 3 times their friend shows up and give them an energy drink. The Energy Drink item can be obtained from this event.
+	\item Complexity level: medium
+	\item Since there are no clues but the long description implies that you should rest a bit, the player has to decide to either continue or rest. Then after that the same thing, then the same thing. If a player decides to rest 3 times they are able to get an item.
+	\end{itemize}
+
+
+\end{enumerate}
+
+
+\section*{Extra Gameplay Files}
+
+If you have any extra \texttt{gameplay\#.txt} files, describe them below.
+
+We have 4 gameplay files
+\begin{itemize}
+\item solution.txt
+    \begin{itemize}
+    \item The fastest method to win the game. Basically in this the player starts at Robart's Library, then they move down to Convocation Hall, get their T-CARD, then move down the Exam Center and take their exam and win the game.
+    \end{itemize}
+\item solution\_everything.txt
+    \begin{itemize}
+        \item Win the game with all the items that you can obtain to gain the most points. Basically this goes through and does all the events correctly and gets all the items a player is able to get.
+    \end{itemize}
+\item gameover\_notcard.txt
+    \begin{itemize}
+        \item Lose the game since you make it to the exam center without your T-CARD.
+    \end{itemize}
+\item gameover\_time.txt
+    \begin{itemize}
+        \item Lose the game because you took too long to get to the exam center which is 200 moves.
+    \end{itemize}
+\end{itemize}
+\end{document}
