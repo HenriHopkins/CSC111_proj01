@@ -196,9 +196,9 @@ if __name__ == "__main__":
     wh = Whitney(False, False)
     mo = Morrison(False, False)
     initiated = False  # variable to determine whether the UC puzzle challenge has been initiated
-    #w.get_item(p, 0)
-    # intro() #TODO UNCOMMENT
+    intro()
     while not p.victory:
+        moves += 1
         if moves == 200:
             print('You check your watch suddenly see that its time to take your exam!')
             time.sleep(1)
@@ -603,7 +603,7 @@ if __name__ == "__main__":
                     else:
                         print('You can\'t rest forever! Time to go!!!!')
                         time.sleep(1)
-        moves += 1
+
     print('Congratulations for making it to your test on time!')
     time.sleep(1)
     print('You will now take your test, good luck!')
